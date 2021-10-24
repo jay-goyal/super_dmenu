@@ -1,5 +1,5 @@
 declare -a editors=(
-    "CLion"
+    "VS Code"
     "Emacs"
     "Neovim"
 )
@@ -7,13 +7,13 @@ declare -a editors=(
 choice=$(printf '%s\n' "${editors[@]}" | dmenu -h 27 -l 20 -bw 1 -p "Edit Using: ")
 
 case $choice in
-    CLion)
-        clion
+    "VS Code")
+        code
         ;;
-    Emacs)
-        emacs
+    "Emacs")
+        emacsclient -c
         ;;
-    Neovim)
+    "Neovim")
         alacritty -e nvim
         ;;
 esac
